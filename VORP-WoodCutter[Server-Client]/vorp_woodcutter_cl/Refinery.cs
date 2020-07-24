@@ -12,6 +12,8 @@ namespace vorp_woodcutter_cl
     {
         static bool isOnScenario = false;
 
+        static Dictionary<int, int> BlipsRef = new Dictionary<int, int>();
+
         [Tick]
         public async Task onRefinery()
         {
@@ -28,6 +30,17 @@ namespace vorp_woodcutter_cl
                 float x = float.Parse(GetConfig.Config["RefineryZones"][i]["Coords"][0].ToString());
                 float y = float.Parse(GetConfig.Config["RefineryZones"][i]["Coords"][1].ToString());
                 float z = float.Parse(GetConfig.Config["RefineryZones"][i]["Coords"][2].ToString());
+
+                if (!BlipsRef.ContainsKey(i))
+                {
+                    //1904459580
+                    int _blip = Function.Call<int>((Hash)0x554D9D53F696D002, 1664425300, x, y, z);
+                    Function.Call((Hash)0x74F74D3207ED525C, _blip, 1904459580, 1);
+                    Function.Call((Hash)0x9CB1A1623062F402, _blip, "");
+                    BlipsRef.Add(i, _blip);
+                    Debug.WriteLine("Blips Ready");
+                    await Delay(1000);
+                }
 
                 if (API.GetDistanceBetweenCoords(pCoords.X, pCoords.Y, pCoords.Z, x, y, z, true) <= 1.0f)
                 {
@@ -62,7 +75,6 @@ namespace vorp_woodcutter_cl
 
             }
         }
-
 
         public async Task DrawTxt(string text, float x, float y, float fontscale, float fontsize, int r, int g, int b, int alpha, bool textcentred, bool shadow)
         {

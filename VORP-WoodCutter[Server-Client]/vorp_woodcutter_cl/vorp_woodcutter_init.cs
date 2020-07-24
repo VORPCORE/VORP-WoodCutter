@@ -134,6 +134,9 @@ namespace vorp_woodcutter_cl
                         Vector3 objpos = new Vector3(tree["Coords"]["X"].ToObject<float>(), tree["Coords"]["Y"].ToObject<float>(), tree["Coords"]["Z"].ToObject<float>());
                         TreeFakePeds.Add(new Tree(tree["Id"].ToObject<int>(), tree["Name"].ToString(), tree["Model"].ToString(), objpos, false, entPed, entTree));
                         Debug.WriteLine("Arbol creado");
+                        int _blip = Function.Call<int>((Hash)0x23F74C2FDA6E7C61, 1664425300, entPed);
+                        Function.Call((Hash)0x74F74D3207ED525C, _blip, 1480984695, 1);
+                        Function.Call((Hash)0x9CB1A1623062F402, _blip, tree["Name"].ToString());
                         await Delay(100);
                     }
                     index += 1;

@@ -11,7 +11,7 @@
 
   "RefineryZones": [
     {
-      "Coords": [ -355.98, 757.25, 116.07 ]
+      "Coords": [ -355.98, 757.25, 116.07 ] //In dev
     }
   ],
 
@@ -21,7 +21,7 @@
       "NameOnTarget": "Cedro",
       "ItemGivedOnChopRandom": [ 1, 10 ], // min 1, max 10
       "XPGivedOnChop": 100,
-      "Health": 2000,
+      "Health": 600,
       "Coords": [ -1344.269, -230.701, 101.8 ]
     },
     {
@@ -29,7 +29,7 @@
       "NameOnTarget": "Cedro",
       "ItemGivedOnChopRandom": [ 1, 10 ], // min 1, max 10
       "XPGivedOnChop": 100,
-      "Health": 2000,
+      "Health": 600,
       "Coords": [ -1337.316, -266.1476, 103.0 ]
     },
     {
@@ -37,7 +37,7 @@
       "NameOnTarget": "Cedro",
       "ItemGivedOnChopRandom": [ 1, 10 ], // min 1, max 10
       "XPGivedOnChop": 100,
-      "Health": 2000,
+      "Health": 600,
       "Coords": [ -1348.599, -277.4002, 102.0 ]
     },
     {
@@ -45,7 +45,7 @@
       "NameOnTarget": "Cedro",
       "ItemGivedOnChopRandom": [ 1, 10 ], // min 1, max 10
       "XPGivedOnChop": 100,
-      "Health": 2000,
+      "Health": 600,
       "Coords": [ -1373.911, -296.953, 100.0 ]
     }
   ]
